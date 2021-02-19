@@ -16,18 +16,19 @@ make_dir (){
 
 make_dir
 
-#making text files
-make_text ( ){
-    for i in {1..4}
-    do
-        touch text"$i".txt
-    done
-}
-make_text
+
 
 #putting directories in an array
 dir_array=("dir1" "dir2" "dir3" "dir 4")
-
+#making text files in directories
+make_text ( ){
+    for i in {0..3}
+    do
+        add_text="${dir_array[$i]}"
+        touch text"${add_text}/$i".txt
+    done
+}
+make_text
 
 
 #add textfiles to array
