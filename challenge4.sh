@@ -16,9 +16,6 @@ make_dir (){
 
 make_dir
 
-#putting directories in an array
-dir_array=("dir1" "dir2" "dir3" "dir 4")
-
 #making text files
 make_text ( ){
     for i in {1..4}
@@ -27,4 +24,12 @@ make_text ( ){
     done
 }
 make_text
+
+#putting directories in an array
+dir_array=("dir1" "dir2" "dir3" "dir 4")
+
+
+
+#add textfiles to array
+
 #end
