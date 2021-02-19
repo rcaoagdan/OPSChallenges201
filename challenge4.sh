@@ -21,4 +21,4 @@ dir_array=("dir1" "dir2" "dir3" "dir 4")
 
 #making text files
 echo ${dir_array[4]}
-end
+#end
