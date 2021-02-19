@@ -27,10 +27,7 @@ for i in {0..3}
         txt_names=("1" "2" "3" "4")
         command touch "${add_files}${txt_names[$i].txt}"
     done
-
 }
-
-arrary_you_go
-
+array_you_go
 
 #end
