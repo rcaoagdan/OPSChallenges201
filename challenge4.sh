@@ -10,7 +10,7 @@
 make_dir (){
     for i in {1..4}
     do
-        command mkdir "dir$i"
+        command mkdir "directory$i"
     done
 }
 
@@ -19,7 +19,7 @@ make_dir
 #putting directories in an array
 array_you_go(){
 chosen_path="$HOME/Documents/OPSChallenges/"
-dir_array=("dir1" "dir2" "dir3" "dir4")
+dir_array=("directory1" "directory2" "directory3" "directory4")
 
 for i in {0..3}
     do
@@ -30,7 +30,7 @@ for i in {0..3}
 
 }
 
-array_you_go
+arrary_you_go
 
 
 #end
