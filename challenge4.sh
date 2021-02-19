@@ -17,17 +17,5 @@ make_dir (){
 make_dir
 
 #putting directories in an array
-array_you_go(){
-chosen_path="$HOME/Documents/OPSChallenges/"
-dir_array=("directory1" "directory2" "directory3" "directory4")
-
-for i in {0..3}
-    do
-        add_files="${chosen_path}${dir_array[$i]}"
-        txt_names=("1" "2" "3" "4")
-        command touch "${add_files}/test${txt_names[$i]}.txt"
-    done
-}
-array_you_go
 
 #end
