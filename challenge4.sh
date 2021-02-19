@@ -25,7 +25,7 @@ make_text ( ){
     for i in {0..3}
     do
         add_text="${dir_array[$i]}"
-        touch text"${add_text}/$i".txt
+        touch "${add_text}/$i".txt
     done
 }
 make_text
