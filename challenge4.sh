@@ -20,12 +20,5 @@ make_dir
 dir_array=("dir1" "dir2" "dir3" "dir 4")
 
 #making text files
-make_text (){
-    for i in {1..4}
-    do command touch "text$i.txt"
-    done
-}
 
-
-
-#end
+end
