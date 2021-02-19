@@ -17,7 +17,7 @@ make_dir (){
 make_dir
 
 #putting directories in an array
-path= "$HOME/OPSChallenges/"
 dir_array=(dir1 dir2 dir3 dir 4)
+
 
 #end
