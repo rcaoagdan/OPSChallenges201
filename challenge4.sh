@@ -25,7 +25,7 @@ for i in {0..3}
     do
         add_files="${chosen_path}${dir_array[$i]}"
         txt_names=("1" "2" "3" "4")
-        touch "${add_files}/$sample{txt_names[$i].txt}"
+        touch "${add_files}${txt_names[$i].txt}"
 
 
 }
