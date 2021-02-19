@@ -26,4 +26,5 @@ make_text ( ){
         touch text"$i".txt
     done
 }
+make_text
 #end
