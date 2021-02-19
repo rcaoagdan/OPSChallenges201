@@ -17,6 +17,7 @@ make_dir (){
 make_dir
 
 #putting directories in an array
+path= "$HOME/OPSCHALLENGES/"
 dir_array=(dir1 dir2 dir3 dir 4)
-echo "There are ${#dir[@}]} directories"
+
 #end
