@@ -19,10 +19,10 @@ make_dir
 
 
 #putting directories in an array
-dir_array=("dir1" "dir2" "dir3" "dir 4")
+dir_array=("dir1" "dir2" "dir3" "dir4")
 #making text files in directories
 make_text ( ){
-    for i in {0..4}
+    for i in {0..3}
     do
         add_text="${dir_array[$i]}"
         touch "${add_text}/$i".txt
