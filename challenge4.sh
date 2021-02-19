@@ -16,11 +16,21 @@ make_dir (){
 
 make_dir
 
+#putting directories in an array
+array_you_go(){
+chosen_path="$HOME/Documents/OPSChallenges/"
+dir_array=("dir1" "dir2" "dir3" "dir4")
+
+for i in {0..3}
+    do
+        add_files="${chosen_path}${dir_array[$i]}"
+        txt_names=("1" "2" "3" "4")
+        touch "${add_files}/$sample{txt_names[$i].txt}"
 
 
-#Declaation of Functions
+}
 
-#main
+array_you_go
 
 
 #end
