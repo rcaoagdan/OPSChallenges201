@@ -17,7 +17,8 @@ make_dir (){
 make_dir
 
 #putting directories in an array
-dir_array=(dir1 dir2 dir3 dir 4)
+dir_array=("dir1" "dir2" "dir3" "dir 4")
+
 
 
 #end
