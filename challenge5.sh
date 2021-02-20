@@ -2,12 +2,13 @@
 
 #Script Name: OPS 201 Challenge 5
 #Author: Ray Caoagdan
-#Date of last revision: 02/19/2021
+#Date of last revision: 02/20/2021
 #Description of Purpose: Use Loops- Ask user for PID then kills process with PID
 
 #declare variables
 target=$(ps aux)
 
+#main
 
 #asks to kill
 ask_to_kill() {
@@ -34,8 +35,8 @@ kill_process() {
 
 		ask_to_kill
 	fi
-	donme
-
 }
 
-ask_to_kill
+ask_to_kill 
+
+#end
