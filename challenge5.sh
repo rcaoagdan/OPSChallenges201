@@ -30,6 +30,7 @@ kill_process() {
 	if [ "$option" == y ]; then #if option is y then run commands below
 		echo -e "$target" 
 		echo -e "Select your target"
+		echo -e "For your convience PID printed in output.txt" >>output.txt
 		read -r PID 
 		kill -9  "$PID" #kills -9 the process
 
