@@ -33,7 +33,7 @@ kill_process() {
 		read -r PID #reads PID chosen then proceeds to kill -9
 		kill -9  "$PID" #kills -9 the process
 
-		#ask_to_kill
+		ask_to_kill
 	fi
 }
  
