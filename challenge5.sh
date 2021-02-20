@@ -37,7 +37,7 @@ kill_process() {
 	fi
 }
  
-ask_to_kill 
+#ask_to_kill 
 
 #end
 
