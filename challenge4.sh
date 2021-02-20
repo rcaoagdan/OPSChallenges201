@@ -31,6 +31,6 @@ make_text ( ){
 make_text
 
 
-#add textfiles to array
+
 
 #end
