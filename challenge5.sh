@@ -34,9 +34,10 @@ kill_process() {
 		read -r PID 
 		kill -9  "$PID" #kills -9 the process
 
-		ask_to_kill
+		ask_to_kill #infinte loops
 	fi
 }
+
  
 ask_to_kill
 
