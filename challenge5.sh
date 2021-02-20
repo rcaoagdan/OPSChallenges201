@@ -16,27 +16,27 @@ ask_to_kill() {
 	read -r  option
 	while :
 	do
- 		if [ "$option" == n ] ; then
+ 		if [ "$option" == n ] ; then #if option is n  run commands below
 		echo -e "The Process lives another day"
-		break 
+		break  #needed to  break the loop
 		else
-			kill_process
+			kill_process #go to kill process if y is the option
 		fi
 	done
 }
 
 #proceed to execute
 kill_process() {
-	if [ "$option" == y ]; then
+	if [ "$option" == y ]; then #if option is y then run commands below
 		echo -e "$target" 
 		echo -e "Select your target"
 		read -r PID
-		kill -9  "$PID" 
+		kill -9  "$PID" #kills the process
 
 		ask_to_kill
 	fi
 }
-
+ 
 ask_to_kill 
 
 #end
