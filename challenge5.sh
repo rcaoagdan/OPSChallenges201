@@ -6,7 +6,7 @@
 #Description of Purpose: Use Loops- Ask user for PID then kills process with PID
 
 #declare variables
-target=$(ps aux)
+target=$(ps aux) #ps aux lists all processes
 
 #main
 
