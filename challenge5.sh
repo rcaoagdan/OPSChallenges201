@@ -19,7 +19,7 @@ kill_reset () {
 	do
 		if [ "$option" == k ]; then
 			kill_process
-			#break
+			break
 		else
 			reset_process
 		fi
