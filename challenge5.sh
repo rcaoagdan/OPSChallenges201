@@ -6,40 +6,49 @@
 #Description of Purpose: Use Loops- Ask user for PID then kills process with PID
 
 #declare variables
-target=$(ps aux) #ps aux lists all processes
+process=$(ps aux) #ps aux lists all processes
 
 #main
+echo -e "Hello for your convience the process is printed in output.txt"
+echo -e "$process" >>output.txt
+
+
+
+
+
+
+
+
 
 #asks to kill
-ask_to_kill() {
-	echo -e "Shall we kill a process? y/n?: "
-	read -r  option 
-	while :
-	do
- 		if [ "$option" == n ] ; then #if option is n  run commands below
-		echo -e "The Process lives another day"
-		break  #needed to  break the loop
-		else
-			kill_process #go to kill process if y is the option
-		fi
-	done
-}
+#ask_to_kill() {
+#	echo -e "Shall we kill a process? y/n?: "
+#	read -r  option 
+#	while :
+#	do
+#		echo -e "The Process lives another day"
+#		break  #needed to  break the loop
+#		else
+#			kill_process #go to kill process if y is the option
+#		fi
+#	done
+#}
 
 #proceed to execute
-kill_process() {
-	if [ "$option" == y ]; then #if option is y then run commands below
-		echo -e "$target" 
-		echo -e "Select your target.For your convience PID printed in output.txt"
-		echo -e "$target">>output.txt 
-		read -r PID 
-		kill -9  "$PID" #kills -9 the process
+#kill_process() {
+#	if [ "$option" == y ]; then #if option is y then run commands below
+#		echo -e "$target" 
+#		echo -e "Select your target.For your convience PID printed in output.txt"
+#		echo -e "$target">>output.txt 
+#		read -r PID 
+#		kill -9  "$PID" #kills -9 the process
 
-		ask_to_kill #infinte loops
-	fi
-}
+#		ask_to_kill #infinte loops
+#	fi
+#}
 
  
-ask_to_kill
+#ask_to_kill
 
 #end
 
