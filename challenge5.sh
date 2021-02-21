@@ -9,8 +9,23 @@
 process=$(ps aux) #ps aux lists all processes
 
 #main
-echo -e "Hello for your convience the process is printed in output.txt"
-echo -e "$process" >>output.txt
+kill_reset () {
+	echo -e "Hello for your convience the process is printed in output.txt"
+	cat /dev/null >output.txt #deletes any content currently in output.txt 
+	echo -e "$process" >>output.txt #prints PID in output.txt 
+	echo -e "Shall we kill-k or reset-r a process? k/r?"
+	read -r option
+	while:
+	do
+		if [ "$option" == k ]; then
+			kill_process
+			break
+		else
+			reset_process
+		fi
+	done
+
+}
 
 
 
