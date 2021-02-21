@@ -19,7 +19,7 @@ kill_reset () {
 	do
 		if [ "$process" == k ]; then
 			kill_process
-			break
+			#break
 		else
 			reset_process
 		fi
@@ -27,7 +27,29 @@ kill_reset () {
 
 }
 
+kill_process() {
+	if [ "$process" ==k ]; then
+		echo -e "Select process found in output.txt"
+		read -r PID
+		kill -9 "$PID"
 
+		kill_reset
+	fi
+}
+
+reset_process () {
+	if [ "$process" ==r ]; then
+		echo -e "Select Process found in output.txt"
+		read -r PID
+		kill -15 "$PID"
+
+		kill_reset
+	fi
+}
+
+kill_reset
+
+#end
 
 
 
