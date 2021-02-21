@@ -15,7 +15,7 @@ kill_reset () {
 	echo -e "$process" >>output.txt #prints PID in output.txt 
 	echo -e "Shall we kill-k or reset-r a process? k/r?"
 	read -r option
-	while:
+	while :
 	do
 		if [ "$option" == k ]; then
 			kill_process
