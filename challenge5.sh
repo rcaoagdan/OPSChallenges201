@@ -17,7 +17,7 @@ kill_reset () {
 	read -r option
 	while:
 	do
-		if [ "$option" == k ]; then
+		if [ "$process" == k ]; then
 			kill_process
 			break
 		else
