@@ -17,7 +17,7 @@ kill_reset () {
 	read -r option
 	while:
 	do
-		if [ "$process" == k ]; then
+		if [ "$option" == k ]; then
 			kill_process
 			#break
 		else
@@ -28,7 +28,7 @@ kill_reset () {
 }
 
 kill_process() {
-	if [ "$process" ==k ]; then
+	if [ "$option" ==k ]; then
 		echo -e "Select process found in output.txt"
 		read -r PID
 		kill -9 "$PID"
@@ -38,7 +38,7 @@ kill_process() {
 }
 
 reset_process () {
-	if [ "$process" ==r ]; then
+	if [ "$option" ==r ]; then
 		echo -e "Select Process found in output.txt"
 		read -r PID
 		kill -15 "$PID"
