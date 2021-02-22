@@ -24,7 +24,6 @@ root          27  0.0  0.0      0     0 ?        S    15:26   0:00 [cpuhp/3]
 root          28  0.0  0.0      0     0 ?        S    15:26   0:00 [idle_inject/3]
 root          29  0.0  0.0      0     0 ?        S    15:26   0:00 [migration/3]
 root          30  0.0  0.0      0     0 ?        S    15:26   0:00 [ksoftirqd/3]
-root          31  0.0  0.0      0     0 ?        I    15:26   0:00 [kworker/3:0-events]
 root          32  0.0  0.0      0     0 ?        I<   15:26   0:00 [kworker/3:0H-kblockd]
 root          33  0.0  0.0      0     0 ?        S    15:26   0:00 [kdevtmpfs]
 root          34  0.0  0.0      0     0 ?        I<   15:26   0:00 [netns]
@@ -198,32 +197,31 @@ rcaoagd+    2942  0.0  0.0 171352  7116 ?        Sl   15:27   0:00 /usr/libexec/
 root        2946  0.0  0.0   2588  1796 ?        Ss   15:27   0:00 fusermount -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
 root        3063  0.0  0.3 417076 53140 ?        Ssl  15:27   0:00 /usr/libexec/fwupd/fwupd
 root        3817  0.0  0.0  15116  9400 ?        Ss   15:28   0:00 sshd: rcaoagdan [priv]
-rcaoagd+    3896  0.2  0.0  15252  5932 ?        S    15:28   0:04 sshd: rcaoagdan@notty
+rcaoagd+    3896  0.3  0.0  15252  5932 ?        S    15:28   0:06 sshd: rcaoagdan@notty
 rcaoagd+    3897  0.0  0.0  18256  3684 ?        Ss   15:28   0:00 bash
 rcaoagd+    3943  0.0  0.0   2596   744 ?        S    15:28   0:00 sh /home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/server.sh --start-server --host=127.0.0.1 --enable-remote-auto-shutdown --port=0 --connection-secret /home/rcaoagdan/.vscode-server/.622cb03f7e070a9670c94bae1a45d78d7181fbd4.token
-rcaoagd+    3950 16.3  1.2 1148024 198856 ?      Sl   15:28   5:30 /home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/node /home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/out/vs/server/main.js --start-server --host=127.0.0.1 --enable-remote-auto-shutdown --port=0 --connection-secret /home/rcaoagdan/.vscode-server/.622cb03f7e070a9670c94bae1a45d78d7181fbd4.token
-rcaoagd+    4031  4.6  0.6 1081176 102224 ?      Sl   15:28   1:33 /home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/node /home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/out/bootstrap-fork --type=extensionHost --uriTransformerPath=/home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/out/vs/server/uriTransformer.js
-rcaoagd+    4042  0.0  0.2 856732 38344 ?        Sl   15:28   0:00 /home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/node /home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/out/bootstrap-fork --type=watcherService
+rcaoagd+    3950 25.0  1.7 1234348 285056 ?      Rl   15:28   9:25 /home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/node /home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/out/vs/server/main.js --start-server --host=127.0.0.1 --enable-remote-auto-shutdown --port=0 --connection-secret /home/rcaoagdan/.vscode-server/.622cb03f7e070a9670c94bae1a45d78d7181fbd4.token
+rcaoagd+    4031  4.6  0.6 1077848 102116 ?      Sl   15:28   1:44 /home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/node /home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/out/bootstrap-fork --type=extensionHost --uriTransformerPath=/home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/out/vs/server/uriTransformer.js
+rcaoagd+    4042  0.0  0.2 856732 37668 ?        Sl   15:28   0:00 /home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/node /home/rcaoagdan/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/out/bootstrap-fork --type=watcherService
 rcaoagd+    4056  0.0  0.0  19476  5092 pts/1    Ss   15:28   0:00 /bin/bash
 rcaoagd+    4123  0.0  0.0 170808  6200 ?        Ssl  15:28   0:00 /usr/libexec/gvfsd-metadata
 rcaoagd+    4124  0.0  0.1 428168 29456 ?        Sl   15:28   0:00 update-notifier
-root        5614  0.5  0.0      0     0 ?        I    15:33   0:08 [kworker/u8:1-events_unbound]
-root        6369  0.0  0.0      0     0 ?        I    15:41   0:00 [kworker/0:0-events]
-root        6571  0.2  0.0      0     0 ?        I    15:43   0:02 [kworker/u8:2-events_unbound]
+root        5614  0.7  0.0      0     0 ?        I    15:33   0:14 [kworker/u8:1-events_unbound]
+root        6571  0.7  0.0      0     0 ?        I    15:43   0:09 [kworker/u8:2-events_unbound]
 root        7004  0.0  0.0      0     0 ?        I    15:47   0:00 [kworker/1:2-events]
 root        7095  0.0  0.0      0     0 ?        I    15:48   0:00 [kworker/2:1-events]
-root        7165  1.2  0.0      0     0 ?        I    15:48   0:10 [kworker/u8:0-events_unbound]
+root        7165  1.5  0.0      0     0 ?        I    15:48   0:16 [kworker/u8:0-events_unbound]
 root        7783  0.0  0.0      0     0 ?        I    15:55   0:00 [kworker/2:2-events]
-root        7907  1.9  0.0      0     0 ?        I    15:55   0:07 [kworker/u8:3-events_unbound]
-rcaoagd+    8045 41.5  0.0  18360  3864 pts/1    S+   15:56   2:16 bash challenge5.sh
+root        7907  1.3  0.0      0     0 ?        I    15:55   0:08 [kworker/u8:3-events_unbound]
+rcaoagd+    8045 42.0  0.0  18360  3864 pts/1    R+   15:56   4:02 bash challenge5.sh
 rcaoagd+    8109  0.0  0.0  19476  5220 pts/2    Ss   15:56   0:00 /bin/bash
-rcaoagd+    8270 42.7  0.0  18320  3764 pts/2    S+   15:57   1:45 bash challenge5.sh
+rcaoagd+    8270 42.9  0.0  18320  3764 pts/2    R+   15:57   3:31 bash challenge5.sh
 rcaoagd+    8312  0.0  0.0  19476  5220 pts/3    Ss+  15:58   0:00 /bin/bash
 root        8531  0.0  0.0      0     0 ?        I    15:59   0:00 [kworker/3:1-events]
 root        8591  0.0  0.0      0     0 ?        I    15:59   0:00 [kworker/0:1-events]
-root        8598  2.5  0.0      0     0 ?        I    15:59   0:03 [kworker/u8:4-events_unbound]
+root        8598  2.5  0.0      0     0 ?        I    15:59   0:10 [kworker/u8:4-events_unbound]
 rcaoagd+    8759  0.0  0.0  19476  5096 pts/4    Ss   16:01   0:00 /bin/bash
-rcaoagd+    8791  0.0  0.0  16724   732 ?        S    16:01   0:00 sleep 180
-rcaoagd+    8878  0.0  0.0  19476  5184 pts/4    S    16:01   0:00 bash
-rcaoagd+    8911  0.0  0.0  18124  3284 pts/4    S+   16:01   0:00 bash challenge5.sh
-rcaoagd+    8912  0.0  0.0  20996  3344 pts/4    R+   16:01   0:00 ps aux
+rcaoagd+    8878  0.0  0.0  19476  5188 pts/4    S    16:01   0:00 bash
+rcaoagd+    9225  0.0  0.0  16724   732 ?        S    16:04   0:00 sleep 180
+rcaoagd+    9442  0.0  0.0  18124  3264 pts/4    S+   16:05   0:00 bash challenge5.sh
+rcaoagd+    9443  0.0  0.0  20996  3296 pts/4    R+   16:05   0:00 ps aux
