@@ -13,15 +13,15 @@ kill_reset () {
 	echo -e "Hello for your convience the process is printed in output.txt"
 	cat /dev/null >output.txt #deletes any content currently in output.txt 
 	echo -e "$process" >>output.txt #prints PID in output.txt 
-	echo -e "Shall we kill-k or reset-r a process? k/r?"
-	read -r option
+	echo -e "Shall we kill-k or reset-r a process? k/r?" #ask to kill or reset
+	read -r option #reads user input
 	while :
 	do
 		if [ "$option" == k ]; then
-			kill_process
-			break
+			kill_process #calls function kill_process
+			break #needed to break loop just in case
 		else
-			reset_process
+			reset_process #calls function reset_process
 		fi
 	done
 
@@ -38,7 +38,7 @@ kill_process() {
 		read -r PID
 		kill -9 "$PID"
 
-		kill_reset
+		kill_reset #go back to kill_rest
 	fi
 }
 
@@ -49,7 +49,7 @@ reset_process () {
 		read -r PID
 		kill -15 "$PID"
 	
-		kill_reset
+		kill_reset #go back to kill_reset
 	fi
 }
 
