@@ -9,7 +9,10 @@
 process=$(ps aux) #ps aux lists all processes
 
 #main
-print_process
+echo -e "$process"
+echo -e "\nHello for your convience the process will aslo be printed in output.txt"
+cat /dev/null >output.txt #deletes any content currently in output.txt 
+echo -e "$process" >>output.txt #prints PID in output.txt 
 
 kill_reset () {
 	echo -e "\nShall we kill-k or reset-r a process? k/r?" #ask to kill or reset
@@ -28,15 +31,8 @@ kill_reset () {
 
 #end
 
-#below are the fuction called upon to main
-
-print_process() {
-	echo -e "$process"
-	echo -e "\nHello for your convience the process will aslo be printed in output.txt"
-	cat /dev/null >output.txt #deletes any content currently in output.txt 
-	echo -e "$process" >>output.txt #prints PID in output.txt 
-}
-
+#below are the fuctions called upon to main
+	
 #kill the process
 kill_process() {
 	if [ "$option" == k ]; then
@@ -60,7 +56,6 @@ reset_process () {
 }
 
 kill_reset
-print_process
 
 # sources
 # link to kill process https://www.linux.com/training-tutorials/how-kill-process-command-line/
