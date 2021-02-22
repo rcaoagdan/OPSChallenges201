@@ -48,8 +48,7 @@ reset_process () {
 		echo -e "Select Process found in output.txt"
 		read -r PID
 		kill -15 "$PID"
-		echo -e "$PID has been reseted"
-
+	
 		kill_reset
 	fi
 }
