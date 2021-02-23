@@ -46,7 +46,7 @@ kill_process() {
 
 #reset the process
 grace_process () {
-	if [ "$option" == r ]; then
+	if [ "$option" == g ]; then
 		echo -e "Select Process found in output.txt"
 		read -r PID
 		kill -15 "$PID" #sends SIGTERM to PID (gracefully kill)
