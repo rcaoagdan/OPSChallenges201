@@ -10,6 +10,6 @@ openports=$(sudo netstat -ltup)
 
 #print listening ports
 listening_ports () {
-    echo -e "openports"
+    echo -e "$openports"
 }
 listening_ports
