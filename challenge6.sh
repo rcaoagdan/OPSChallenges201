@@ -6,10 +6,12 @@
 #Description of Purpose: Show Listening Ports
 
 #variables
-openports=$(sudo netstat -ltup)
+openports=$(netstat --listen)
 
 #print listening ports
 listening_ports () {
     echo -e "$openports"
 }
+
 listening_ports
+
