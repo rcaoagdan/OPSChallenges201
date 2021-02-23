@@ -15,7 +15,7 @@ cat /dev/null >output.txt #deletes any content currently in output.txt
 echo -e "$process" >>output.txt #prints PID in output.txt 
 
 kill_reset () {
-	echo -e "\nShall we kill-k or gracefully kill-g a process? k/g?" #ask to kill or reset
+	echo -e "\nShall we kill-k or gracefully kill-g a process? k/g?" 
 	read -r option #reads user input
 	while :
 	do
