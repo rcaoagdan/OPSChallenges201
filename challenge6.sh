@@ -19,5 +19,6 @@ getIPaddress() {
     read -r ipaddress
     openports=$(nc -z -v $ipaddress 1-1023)
 }
+getIPaddress
 listening_ports
 
