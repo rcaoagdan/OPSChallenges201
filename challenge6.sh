@@ -6,7 +6,7 @@
 #Description of Purpose: Show Listening Ports
 
 #variables
-openports=$(nc -u 192.168.1.104)
+openports=$(nc -z -v 192.168.1.104 0-1023)
 
 #print listening ports
 listening_ports () {
