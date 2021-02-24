@@ -6,7 +6,7 @@
 #Description of Purpose: Show Listening Ports
 
 #variables
-openports=$(netstat --listen)
+openports=$(nc -u 192.168.1.104)
 
 #print listening ports
 listening_ports () {
