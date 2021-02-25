@@ -40,7 +40,7 @@ print_ports () {
 #functons to be called upon to main 
 open_ports () {
     if [ "$option" == OPEN ] ; then
-        openports=$(netstat -tulpn | grep OPEN)
+        openports=$(netstat -tulpn  | grep succeed)
         echo "$openports"
         print_ports
     fi
@@ -48,7 +48,7 @@ open_ports () {
 
 close_ports () {
     if [ "$option" == CLOSED ] ; then
-        closeports=$(netstat -tulpn | grep CLOSE)
+        closeports=$(netstat -tulpn | grep failed)
         echo "$closedports"
         print_ports
     fi 
@@ -56,7 +56,7 @@ close_ports () {
 
 all_ports () {
     if [ "$option" == ALL ] ; then
-        allports=$(netstat -tulpn | grep LISTEN)
+        allports=$(netstat -tulpn | grep LISTEN) #list all ports that are listening
         echo "$allports"
         print_ports
     fi
