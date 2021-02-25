@@ -8,7 +8,7 @@
 #sets variable set to users inputed IP ADDRESS 
 echo -e "please enter your IP addresss: "
 read -r ipaddress
-#openports=$(nc -z -v $ipaddress 1-1023)
+
 
 
 #main
