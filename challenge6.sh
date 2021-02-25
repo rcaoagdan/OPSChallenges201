@@ -15,7 +15,7 @@ read -r ipaddress
 #print listening ports
 print_ports () {
     #echo -e "$ipaddress"
-    echo -e "Woud you like to view OPEN, CLOSED or ALL ports? TYPE- EXIT to leave"
+    echo -e "\nWoud you like to view OPEN, CLOSED or ALL ports? EXIT to leave"
     read -r option
     while : 
     do 
@@ -38,9 +38,10 @@ print_ports () {
 #end
 
 #functons to be called upon to main 
+# ports 0-1023 are all well known ports 
 open_ports () {
     if [ "$option" == OPEN ] ; then
-        openports=$(netstat -tulpn  | grep succeed)
+        openports=$(nc -z -v $ipaddress 1-1023 2>&1 | grep succeeded) #show succeded (OPEN) ports -z tell nc to scan for open ports -v shows more info
         echo "$openports"
         print_ports
     fi
@@ -48,15 +49,15 @@ open_ports () {
 
 close_ports () {
     if [ "$option" == CLOSED ] ; then
-        closeports=$(netstat -tulpn | grep failed)
-        echo "$closedports"
+        closeports=$(nc -z -v 192.168.1.104 1-1023 2>&1 | grep failed) #show failed well known ports (CLOSED)
+        echo "$closeports"
         print_ports
     fi 
 }
 
 all_ports () {
     if [ "$option" == ALL ] ; then
-        allports=$(netstat -tulpn | grep LISTEN) #list all ports that are listening
+        allports=$(netstat -tul | grep LISTEN) #list all ports that are listening -t shows TCP -u shows UDP -l displays server sockets
         echo "$allports"
         print_ports
     fi
@@ -64,3 +65,6 @@ all_ports () {
 
 print_ports
 
+#sources
+# nc commands https://linuxize.com/post/netcat-nc-command-with-examples/
+# check for listening ports https://linuxize.com/post/check-listening-ports-linux/
