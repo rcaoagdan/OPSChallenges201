@@ -22,11 +22,9 @@ print_ports () {
         if [ "$option" == OPEN ] ; then
             open_ports
         elif [ "$option" == CLOSED ] ; then
-            echo "closed"
-            print_ports
+            close_ports
         elif [ "$option" == ALL ] ; then
-            echo "ALL" 
-            print_ports
+            all_ports
         elif [ "$option" == EXIT ] ; then
             echo " Have a nice day "
             break
@@ -42,12 +40,27 @@ print_ports () {
 #functons to be called upon to main 
 open_ports () {
     if [ "$option" == OPEN ] ; then
-        openports=$(nc -zv $ipaddress 1-1023)
+        openports=$(netstat -tulpn | grep OPEN)
         echo "$openports"
         print_ports
     fi
 }
 
+close_ports () {
+    if [ "$option" == CLOSED ] ; then
+        closeports=$(netstat -tulpn | grep CLOSE)
+        echo "$closedports"
+        print_ports
+    fi 
+}
+
+all_ports () {
+    if [ "$option" == ALL ] ; then
+        allports=$(netstat -tulpn | grep LISTEN)
+        echo "$allports"
+        print_ports
+    fi
+}
 
 print_ports
 
