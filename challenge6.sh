@@ -26,10 +26,10 @@ print_ports () {
         elif [ "$option" == ALL ] ; then
             all_ports
         elif [ "$option" == EXIT ] ; then
-            echo " Have a nice day "
+            echo -e "\nHave a nice day "
             break
         else
-            echo "Please select a correct option" #ensures on selcted parameters can be used 
+            echo -e  "\nPlease select a correct option" #ensures on selcted parameters can be used 
             print_ports
         fi
     done
@@ -42,7 +42,7 @@ print_ports () {
 open_ports () {
     if [ "$option" == OPEN ] ; then
         openports=$(nc -z -v $ipaddress 1-1023 2>&1 | grep succeeded) #show succeded (OPEN) ports -z tell nc to scan for open ports -v shows more info
-        echo "$openports"
+        echo -e  "\n$openports"
         print_ports
     fi
 }
@@ -50,7 +50,7 @@ open_ports () {
 close_ports () {
     if [ "$option" == CLOSED ] ; then
         closeports=$(nc -z -v 192.168.1.104 1-1023 2>&1 | grep failed) #show failed well known ports (CLOSED)
-        echo "$closeports"
+        echo -e "\n$closeports"
         print_ports
     fi 
 }
@@ -58,7 +58,7 @@ close_ports () {
 all_ports () {
     if [ "$option" == ALL ] ; then
         allports=$(netstat -tul | grep LISTEN) #list all ports that are listening -t shows TCP -u shows UDP -l displays server sockets
-        echo "$allports"
+        echo -e  "\n$allports"
         print_ports
     fi
 }
