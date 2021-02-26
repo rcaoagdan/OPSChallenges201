@@ -49,7 +49,7 @@ open_ports () {
 
 close_ports () {
     if [ "$option" == CLOSED ] ; then
-        closeports=$(nc -z -v 192.168.1.104 1-1023 2>&1 | grep failed) #show failed well known ports (CLOSED)
+        closeports=$(nc -z -v $ipaddress 1-1023 2>&1 | grep failed) #show failed well known ports (CLOSED)
         echo -e "\n$closeports"
         print_ports
     fi 
