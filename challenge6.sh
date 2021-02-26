@@ -63,8 +63,13 @@ all_ports () {
     fi
 }
 
+#grep is Global Regular Expression Print - searches files for lines that match a givin pattern (paramter) then writes each matching line to standard output
+
+
 print_ports
+
 
 #sources
 # nc commands https://linuxize.com/post/netcat-nc-command-with-examples/
 # check for listening ports https://linuxize.com/post/check-listening-ports-linux/
+# grep https://linuxize.com/post/how-to-use-grep-command-to-search-files-in-linux/
