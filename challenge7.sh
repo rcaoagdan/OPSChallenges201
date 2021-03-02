@@ -2,7 +2,7 @@
 
 #Script Name: OPS 201 Challenge 7
 #Author: Ray Caoagdan
-#Date of last revision: 02/2528/2021
+#Date of last revision: 03/01/2021
 #Description of Purpose: lshw and grep to show system information
 
 #main 
