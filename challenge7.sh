@@ -75,7 +75,7 @@ ram_info () {
 disadapt () {
      if [ "$sysinfo" == 4 ] ; then
     disinfo=$(lshw -class video  )
-    echo -e "\nShowing Display Adaptaer Information"
+    echo -e "\nShowing Display Adapter Information"
     echo -e "\n$disinfo"
     print_info 
     fi
