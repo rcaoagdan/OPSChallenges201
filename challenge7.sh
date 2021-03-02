@@ -5,10 +5,6 @@
 #Date of last revision: 02/2528/2021
 #Description of Purpose: lshw and grep to show system information
 
-
-#variables
-infosystem=$(lshw)
-
 #main 
   
 print_info () {
@@ -20,8 +16,8 @@ print_info () {
     echo -e "5. Network Adapter"
     echo -e "6. Exit"
     read -r sysinfo
-    cat /dev/null >output.txt #deletes any content currently in output.txt 
-    echo -e "$infosystem" >>output.txt 
+    #cat /dev/null >output.txt #deletes any content currently in output.txt 
+    #echo -e "$infosystem" >>output.txt 
      while : 
     do 
         if [ "$sysinfo" == 1 ] ; then
@@ -45,14 +41,14 @@ print_info () {
     done
 }
 
-
-
 #end
 
 #functions to be called upon to main 
+# - class can be used to only show what you want 
 comp_name () {
     if [ "$sysinfo" == 1 ] ; then
-    compname=$(grep B1 "description: Computer" output.txt)
+    compname=$(sudo lshw | grep -m1 "rcaoagdan") #-m1 only list first matching instance 
+    echo -e "\nPrinting Computer Name:"
     echo -e "\n$compname"
     print_info 
     fi
@@ -60,7 +56,8 @@ comp_name () {
 
 cpu_info () {
     if [ "$sysinfo" == 2 ] ; then
-    cpuinfo=$(lshw -class CPU | grep -v "capabilities") #-v leaves out this information
+    cpuinfo=$(sudo lshw -class CPU | grep -v "capabilities") #-v leaves out this information
+    echo -e "\nDisplaying CPU Information:"
     echo -e "\n$cpuinfo" 
     print_info 
     fi
@@ -69,6 +66,7 @@ cpu_info () {
 ram_info () {
      if [ "$sysinfo" == 3 ] ; then
     raminfo=$(lshw -class memory)
+    echo -e "\nDisplaying Memory Information:"
     echo -e "\n$raminfo"
     print_info 
     fi
@@ -77,6 +75,7 @@ ram_info () {
 disadapt () {
      if [ "$sysinfo" == 4 ] ; then
     disinfo=$(lshw -class video  )
+    echo -e "\nShowing Display Adaptaer Information"
     echo -e "\n$disinfo"
     print_info 
     fi
@@ -85,6 +84,7 @@ disadapt () {
 netdapt () {
      if [ "$sysinfo" == 5 ] ; then
     netinfo=$(lshw -class network | grep -B15 "*-network DISABLED" ) #-B "text" prints everything before said parameters
+    echo -e "\nDisplaying Network:"
     echo -e "\n$netinfo"
     print_info 
     fi
