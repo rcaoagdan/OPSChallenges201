@@ -52,7 +52,7 @@ print_info () {
 #functions to be called upon to main 
 comp_name () {
     if [ "$sysinfo" == 1 ] ; then
-    compname=$(grep "description: " output.txt)
+    compname=$(grep B1 "description: Computer" output.txt)
     echo -e "\n$compname"
     print_info 
     fi
@@ -60,35 +60,34 @@ comp_name () {
 
 cpu_info () {
     if [ "$sysinfo" == 2 ] ; then
-    cpuinfo=$(lshw -class proccessor)
-    echo -e "\n$cpuinfo"
+    cpuinfo=$(lshw -class CPU | grep -v "capabilities") #-v leaves out this information
+    echo -e "\n$cpuinfo" 
     print_info 
     fi
 }
 
 ram_info () {
      if [ "$sysinfo" == 3 ] ; then
-    cpuinfo=$(lshw -class memory)
-    echo -e "\n$cpuinfo"
+    raminfo=$(lshw -class memory)
+    echo -e "\n$raminfo"
     print_info 
     fi
 }
 
 disadapt () {
      if [ "$sysinfo" == 4 ] ; then
-    cpuinfo=$(lshw -class video)
-    echo -e "\n$cpuinfo"
+    disinfo=$(lshw -class video  )
+    echo -e "\n$disinfo"
     print_info 
     fi
 }
 
 netdapt () {
      if [ "$sysinfo" == 5 ] ; then
-    cpuinfo=$(lshw -class network)
-    echo -e "\n$cpuinfo"
+    netinfo=$(lshw -class network | grep -B15 "*-network DISABLED" ) #-B "text" prints everything before said parameters
+    echo -e "\n$netinfo"
     print_info 
     fi
 }
-
 
 print_info 

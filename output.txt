@@ -1,0 +1,325 @@
+rcaoagdan
+    description: Computer
+    width: 64 bits
+    capabilities: smp vsyscall32
+  *-core
+       description: Motherboard
+       physical id: 0
+     *-memory
+          description: System memory
+          physical id: 0
+          size: 16GiB
+     *-cpu
+          product: Intel(R) Core(TM) i5-4570 CPU @ 3.20GHz
+          vendor: Intel Corp.
+          physical id: 1
+          bus info: cpu@0
+          size: 2261MHz
+          capacity: 3600MHz
+          width: 64 bits
+          capabilities: fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp x86-64 constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts md_clear flush_l1d cpufreq
+     *-pci
+          description: Host bridge
+          product: 4th Gen Core Processor DRAM Controller
+          vendor: Intel Corporation
+          physical id: 100
+          bus info: pci@0000:00:00.0
+          version: 06
+          width: 32 bits
+          clock: 33MHz
+          configuration: driver=hsw_uncore
+          resources: irq:0
+        *-display
+             description: VGA compatible controller
+             product: Xeon E3-1200 v3/4th Gen Core Processor Integrated Graphics Controller
+             vendor: Intel Corporation
+             physical id: 2
+             bus info: pci@0000:00:02.0
+             version: 06
+             width: 64 bits
+             clock: 33MHz
+             capabilities: vga_controller bus_master cap_list rom
+             configuration: driver=i915 latency=0
+             resources: irq:31 memory:f7800000-f7bfffff memory:e0000000-efffffff ioport:f000(size=64) memory:c0000-dffff
+        *-multimedia:0
+             description: Audio device
+             product: Xeon E3-1200 v3/4th Gen Core Processor HD Audio Controller
+             vendor: Intel Corporation
+             physical id: 3
+             bus info: pci@0000:00:03.0
+             version: 06
+             width: 64 bits
+             clock: 33MHz
+             capabilities: bus_master cap_list
+             configuration: driver=snd_hda_intel latency=0
+             resources: irq:33 memory:f7c34000-f7c37fff
+        *-usb:0
+             description: USB controller
+             product: 8 Series/C220 Series Chipset Family USB xHCI
+             vendor: Intel Corporation
+             physical id: 14
+             bus info: pci@0000:00:14.0
+             version: 04
+             width: 64 bits
+             clock: 33MHz
+             capabilities: xhci bus_master cap_list
+             configuration: driver=xhci_hcd latency=0
+             resources: irq:27 memory:f7c20000-f7c2ffff
+        *-communication:0
+             description: Communication controller
+             product: 8 Series/C220 Series Chipset Family MEI Controller #1
+             vendor: Intel Corporation
+             physical id: 16
+             bus info: pci@0000:00:16.0
+             version: 04
+             width: 64 bits
+             clock: 33MHz
+             capabilities: bus_master cap_list
+             configuration: driver=mei_me latency=0
+             resources: irq:30 memory:f7c40000-f7c4000f
+        *-communication:1
+             description: Serial controller
+             product: 8 Series/C220 Series Chipset Family KT Controller
+             vendor: Intel Corporation
+             physical id: 16.3
+             bus info: pci@0000:00:16.3
+             version: 04
+             width: 32 bits
+             clock: 66MHz
+             capabilities: 16550 cap_list
+             configuration: driver=serial latency=0
+             resources: irq:19 ioport:f0e0(size=8) memory:f7c3e000-f7c3efff
+        *-network
+             description: Ethernet interface
+             product: Ethernet Connection I217-LM
+             vendor: Intel Corporation
+             physical id: 19
+             bus info: pci@0000:00:19.0
+             logical name: eno1
+             version: 04
+             serial: 88:51:fb:67:6d:d0
+             size: 100Mbit/s
+             capacity: 1Gbit/s
+             width: 32 bits
+             clock: 33MHz
+             capabilities: bus_master cap_list ethernet physical tp 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation
+             configuration: autonegotiation=on broadcast=yes driver=e1000e driverversion=3.2.6-k duplex=full firmware=0.13-4 ip=192.168.1.100 latency=0 link=yes multicast=yes port=twisted pair speed=100Mbit/s
+             resources: irq:28 memory:f7c00000-f7c1ffff memory:f7c3d000-f7c3dfff ioport:f080(size=32)
+        *-usb:1
+             description: USB controller
+             product: 8 Series/C220 Series Chipset Family USB EHCI #2
+             vendor: Intel Corporation
+             physical id: 1a
+             bus info: pci@0000:00:1a.0
+             version: 04
+             width: 32 bits
+             clock: 33MHz
+             capabilities: ehci bus_master cap_list
+             configuration: driver=ehci-pci latency=0
+             resources: irq:16 memory:f7c3c000-f7c3c3ff
+        *-multimedia:1
+             description: Audio device
+             product: 8 Series/C220 Series Chipset High Definition Audio Controller
+             vendor: Intel Corporation
+             physical id: 1b
+             bus info: pci@0000:00:1b.0
+             version: 04
+             width: 64 bits
+             clock: 33MHz
+             capabilities: bus_master cap_list
+             configuration: driver=snd_hda_intel latency=0
+             resources: irq:32 memory:f7c30000-f7c33fff
+        *-pci
+             description: PCI bridge
+             product: 8 Series/C220 Series Chipset Family PCI Express Root Port #1
+             vendor: Intel Corporation
+             physical id: 1c
+             bus info: pci@0000:00:1c.0
+             version: d4
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:26 ioport:2000(size=4096) memory:df200000-df3fffff ioport:df400000(size=2097152)
+        *-usb:2
+             description: USB controller
+             product: 8 Series/C220 Series Chipset Family USB EHCI #1
+             vendor: Intel Corporation
+             physical id: 1d
+             bus info: pci@0000:00:1d.0
+             version: 04
+             width: 32 bits
+             clock: 33MHz
+             capabilities: ehci bus_master cap_list
+             configuration: driver=ehci-pci latency=0
+             resources: irq:23 memory:f7c3b000-f7c3b3ff
+        *-isa
+             description: ISA bridge
+             product: Q87 Express LPC Controller
+             vendor: Intel Corporation
+             physical id: 1f
+             bus info: pci@0000:00:1f.0
+             version: 04
+             width: 32 bits
+             clock: 33MHz
+             capabilities: isa bus_master cap_list
+             configuration: driver=lpc_ich latency=0
+             resources: irq:0
+        *-sata
+             description: SATA controller
+             product: 8 Series/C220 Series Chipset Family 6-port SATA Controller 1 [AHCI mode]
+             vendor: Intel Corporation
+             physical id: 1f.2
+             bus info: pci@0000:00:1f.2
+             version: 04
+             width: 32 bits
+             clock: 66MHz
+             capabilities: sata ahci_1.0 bus_master cap_list
+             configuration: driver=ahci latency=0
+             resources: irq:29 ioport:f0d0(size=8) ioport:f0c0(size=4) ioport:f0b0(size=8) ioport:f0a0(size=4) ioport:f060(size=32) memory:f7c3a000-f7c3a7ff
+        *-serial
+             description: SMBus
+             product: 8 Series/C220 Series Chipset Family SMBus Controller
+             vendor: Intel Corporation
+             physical id: 1f.3
+             bus info: pci@0000:00:1f.3
+             version: 04
+             width: 64 bits
+             clock: 33MHz
+             configuration: driver=i801_smbus latency=0
+             resources: irq:18 memory:f7c39000-f7c390ff ioport:f040(size=32)
+     *-pnp00:00
+          product: PnP device PNP0c01
+          physical id: 2
+          capabilities: pnp
+          configuration: driver=system
+     *-pnp00:01
+          product: PnP device PNP0c02
+          physical id: 3
+          capabilities: pnp
+          configuration: driver=system
+     *-pnp00:02
+          product: PnP device PNP0b00
+          physical id: 4
+          capabilities: pnp
+          configuration: driver=rtc_cmos
+     *-pnp00:03
+          product: PnP device INT3f0d
+          physical id: 5
+          capabilities: pnp
+          configuration: driver=system
+     *-pnp00:04
+          product: PnP device PNP0c02
+          physical id: 6
+          capabilities: pnp
+          configuration: driver=system
+     *-pnp00:05
+          product: PnP device PNP0303
+          physical id: 7
+          capabilities: pnp
+          configuration: driver=i8042 kbd
+     *-pnp00:06
+          product: PnP device PNP0f03
+          physical id: 8
+          capabilities: pnp
+          configuration: driver=i8042 aux
+     *-pnp00:07
+          product: PnP device PNP0c02
+          physical id: 9
+          capabilities: pnp
+          configuration: driver=system
+     *-pnp00:08
+          product: PnP device PNP0501
+          physical id: a
+          capabilities: pnp
+          configuration: driver=serial
+     *-pnp00:09
+          product: PnP device IFX0102
+          physical id: b
+          capabilities: pnp
+          configuration: driver=tpm_tis
+     *-pnp00:0a
+          product: PnP device PNP0c02
+          physical id: c
+          capabilities: pnp
+          configuration: driver=system
+     *-scsi:0
+          physical id: d
+          logical name: scsi3
+          capabilities: emulated
+        *-disk
+             description: ATA Disk
+             product: KINGSTON SA400S3
+             physical id: 0.0.0
+             bus info: scsi@3:0.0.0
+             logical name: /dev/sda
+             version: J4.3
+             serial: 50026B7783AF20B8
+             size: 447GiB (480GB)
+             capabilities: gpt-1.00 partitioned partitioned:gpt
+             configuration: ansiversion=5 guid=04e6d406-3c3f-4a6f-953d-eeefb3ce8291 logicalsectorsize=512 sectorsize=512
+           *-volume:0 UNCLAIMED
+                description: Windows FAT volume
+                vendor: mkfs.fat
+                physical id: 1
+                bus info: scsi@3:0.0.0,1
+                version: FAT32
+                serial: 679e-1c1c
+                size: 510MiB
+                capacity: 511MiB
+                capabilities: boot fat initialized
+                configuration: FATs=2 filesystem=fat name=EFI System Partition
+           *-volume:1
+                description: EXT4 volume
+                vendor: Linux
+                physical id: 2
+                bus info: scsi@3:0.0.0,2
+                logical name: /dev/sda2
+                logical name: /
+                version: 1.0
+                serial: 5b197821-cf7d-4b8e-9469-3dbb8029a72c
+                size: 446GiB
+                capabilities: journaled extended_attributes large_files huge_files dir_nlink recover 64bit extents ext4 ext2 initialized
+                configuration: created=2021-01-28 22:08:57 filesystem=ext4 lastmountpoint=/ modified=2021-03-01 17:45:48 mount.fstype=ext4 mount.options=rw,relatime,errors=remount-ro mounted=2021-03-01 17:45:48 state=mounted
+     *-scsi:1
+          physical id: e
+          logical name: scsi5
+          capabilities: emulated
+        *-cdrom
+             description: DVD-RAM writer
+             product: DVD A  DS8A9SH
+             vendor: hp
+             physical id: 0.0.0
+             bus info: scsi@5:0.0.0
+             logical name: /dev/cdrom
+             logical name: /dev/cdrw
+             logical name: /dev/dvd
+             logical name: /dev/dvdrw
+             logical name: /dev/sr0
+             version: EHD3
+             capabilities: removable audio cd-r cd-rw dvd dvd-r dvd-ram
+             configuration: ansiversion=5 status=nodisc
+     *-scsi:2
+          physical id: f
+          logical name: scsi6
+        *-disk
+             description: Windows NTFS volume
+             vendor: SABRENT
+             physical id: 0.0.0
+             bus info: scsi@6:0.0.0
+             logical name: /dev/sdb
+             logical name: /media/rcaoagdan/extraspace
+             version: 3.1
+             serial: 573a-9545
+             size: 223GiB
+             capacity: 223GiB
+             capabilities: ntfs initialized
+             configuration: ansiversion=6 clustersize=4096 created=2021-02-24 15:00:41 filesystem=ntfs label=extraspace logicalsectorsize=512 mount.fstype=fuseblk mount.options=rw,nosuid,nodev,relatime,user_id=0,group_id=0,default_permissions,allow_other,blksize=4096 sectorsize=4096 state=mounted
+  *-network DISABLED
+       description: Ethernet interface
+       physical id: 1
+       logical name: virbr0-nic
+       serial: 52:54:00:b3:6a:be
+       size: 10Mbit/s
+       capabilities: ethernet physical
+       configuration: autonegotiation=off broadcast=yes driver=tun driverversion=1.6 duplex=full link=no multicast=yes port=twisted pair speed=10Mbit/s
