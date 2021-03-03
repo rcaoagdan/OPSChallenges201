@@ -16,8 +16,7 @@ print_info () {
     echo -e "5. Network Adapter"
     echo -e "6. Exit"
     read -r sysinfo
-    #cat /dev/null >output.txt #deletes any content currently in output.txt 
-    #echo -e "$infosystem" >>output.txt 
+   
      while : 
     do 
         if [ "$sysinfo" == 1 ] ; then
