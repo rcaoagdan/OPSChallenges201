@@ -8,7 +8,7 @@
 #main 
   
 print_info () {
-    echo -e "\nHello, Please look over the following commands"
+    echo -e "\nHello, Please select the following information you wish to see"
     echo -e "1. Computer Name"
     echo -e "2. CPU Information"
     echo -e "3. RAM Information"
@@ -41,7 +41,7 @@ print_info () {
     done
 }
 
-#end
+
 
 #functions to be called upon to main 
 # - class can be used to only show what you want 
@@ -91,3 +91,4 @@ netdapt () {
 }
 
 print_info 
+#end
