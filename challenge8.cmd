@@ -7,3 +7,5 @@
 
 robocopy "C:\Users\j.thompson\Desktop\My Project Files" "J:\Backups\My Project Files" /E 
 ::/E copies subdirectores even empty
+
+::source https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy
