@@ -8,3 +8,4 @@
 Get-EventLog System -after (Get-Date).AddDays(-1) | Out-File -FilePath .\last_24.txt #Prints Sytem events of last 24hours to last_24.txt 
 
 Get-EventLog System -EntryType Error  | Out-File -FilePath .\error.txt #Prints out all Errors on system event logs to error.txt
+
