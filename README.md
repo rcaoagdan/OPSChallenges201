@@ -15,3 +15,5 @@ challenge6 : Bash Script showinng listening ports - Utilies if elif
 challenge7 : Bash Script utlilizing lshw - grep 
 
 challenge8 : Batch Script - robocopy 
+
+challenge9 : PowerShell Script that prints out system logs
