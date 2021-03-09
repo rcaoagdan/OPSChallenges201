@@ -17,6 +17,6 @@ Get-EventLog System -InstanceId 16 #-InstanceId is used to select a certain even
 Get-EventLog System -Newest 20 # Newest used followed by parameter to print out newest entry. 
 
 $Events = Get-EventLog System -Newest 500 #varaible set to print 500 system log entries. 
-$Events | select -ExpandProperty message #select -expandproperty used to extend the message so the printed info is not shortened 
+$Events | Select-Object -ExpandProperty message #select -expandproperty used to extend the message so the printed info is not shortened 
 
 #end
