@@ -7,7 +7,7 @@
 
 Get-EventLog System -after (Get-Date).AddDays(-1) | Out-File -FilePath .\last_24.txt #Prints Sytem events of last 24 hours to last_24.txt
 # -after (Get-Date) will get info from days set on .AddDays(-string) where string is how many days out. 
-#outfile used to print out info to selected path with -FilePath .\string where string is where you want the info printed too. 
+#outfile used to print out info to selected path with -FilePath .\string where string is where you want the info printed too. | >> last_24.txt also works
 
 Get-EventLog System -EntryType Error  | Out-File -FilePath .\error.txt #Prints out all Errors on system event logs to errors
 # -EntryType is where you select what entry type you wish in the system log
