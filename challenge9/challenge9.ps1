@@ -38,7 +38,7 @@ function recententry {
    echo $recententries
 }
 function recententry2 {
-    $recententries2 =Get-EventLog System -Newest 5 | Select-Object -ExpandProperty message
+    $recententries2 =Get-EventLog System -Newest 500 | Select-Object -ExpandProperty message
     echo $recententries2
  }
 #main
@@ -61,3 +61,4 @@ function recententry2 {
 
 #end
 
+#it runs, I wanted to add it to a loop but couln't quite figure it out. Will try to update in the future just short on time.
