@@ -1,9 +1,9 @@
 # Script Name : Challenge 9
 # Author : Raymond Caoagdan
-# Date of Last Revision : 03 / 07 / 2021
+# Date of Last Revision : 03 / 08 / 2021
 # Purpose : Power shell script that outputs Events into determined files. Print screen evenrts with certain IDs
 
-
+#main
 
 Get-EventLog System -after (Get-Date).AddDays(-1) | Out-File -FilePath .\last_24.txt #Prints Sytem events of last 24 hours to last_24.txt
 # -after (Get-Date) will get info from days set on .AddDays(-string) where string is how many days out. 
@@ -18,3 +18,5 @@ Get-EventLog System -Newest 20 # Newest used followed by parameter to print out 
 
 $Events = Get-EventLog System -Newest 500 #varaible set to print 500 system log entries. 
 $Events | select -ExpandProperty message #select -expandproperty used to extend the message so the printed info is not shortened 
+
+#end
