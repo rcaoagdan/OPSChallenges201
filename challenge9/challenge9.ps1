@@ -16,14 +16,14 @@ $logentry = Read-Host "Select the System log you wish to see" #Read-Host takes i
 #fuctions
 function last24 {
     
-    Get-EventLog System -after (Get-Date).AddDays(-1) | Out-File -FilePath .\last_24.txt #Prints Sytem events of last 24 hours to last_24.txt
+    Get-EventLog System -after (Get-Date).AddDays(-1) | Out-File -FilePath .\last_24.txt #Prints Sytem events of last 24 hours to last_24.txt| $HOME\Desktop\last_24.txt for desktop
     $last24 = Get-EventLog System -after (Get-Date).AddDays(-1)| Select-Object -ExpandProperty message #Select-Object -ExpandProperty message used to expand entry so log is not short
     echo $last24
     
 }
 function errorslog {
     
-    Get-EventLog System -EntryType Error  | Out-File -FilePath .\error.txt #Prints out all Errors on system event logs to errors
+    Get-EventLog System -EntryType Error  | Out-File -FilePath .\error.txt #Prints out all Errors on system event logs to errors | $HOME\Desktop\last_24.txt for desktop
     $logoferrors = Get-EventLog System -EntryType Error | Select-Object -ExpandProperty message
     echo $logoferrors
     
