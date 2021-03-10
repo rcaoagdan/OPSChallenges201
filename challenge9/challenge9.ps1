@@ -11,7 +11,7 @@ Echo "3. Isntance ID 16"
 Echo "4. Recent 20"
 Echo "5. Recent 500"
 Echo "Please ensure a correct selection is made" 
-$logentry = Read-Host "Select the System log you wish to see"
+$logentry = Read-Host "Select the System log you wish to see" #Read-Host takes input
 
 #fuctions
 function last24 {
@@ -34,11 +34,11 @@ function instance16 {
     
 }
 function recententry {
-   $recententries =Get-EventLog System -Newest 50| Select-Object -ExpandProperty message
+   $recententries = Get-EventLog System -Newest 50| Select-Object -ExpandProperty message
    echo $recententries
 }
 function recententry2 {
-    $recententries2 =Get-EventLog System -Newest 500 | Select-Object -ExpandProperty message
+    $recententries2 = Get-EventLog System -Newest 500 | Select-Object -ExpandProperty message
     echo $recententries2
  }
 #main
