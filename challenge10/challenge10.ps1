@@ -16,7 +16,7 @@ $range = 1..13 # variable used range so that result is 10
     Write-Output "2. List Active Process with Highest ID"
     Write-Output "3. List Top 5 Active Process Working Set "
     Write-Output "4. Open OWSAP Top Ten "
-    Write-Output "5. Exit"
+    Write-Output "5. Kill a process"
     $inputentry = Read-Host What would you like to do?...
 
     
@@ -54,6 +54,13 @@ function opensweb {
    
 }
 
+function killprocess {
+    Get-Process | Format-Table -Property * -AutoSize #print processes in Alphabetical order
+    $killcommand = Read-Host "What Command would you like to kill?"
+    Stop-Process -Id $killcommand -Confirm -PassThru #stop process by confirming you want to
+
+}
+
 #main
 
 if($inputentry -eq 1){
@@ -65,7 +72,8 @@ if($inputentry -eq 1){
 }elseif($inputentry -eq 4){
     opensweb
 }elseif($inputentry -eq 5){
-    Remove-PSSession
+    killprocess
 }
 
 #end
+
