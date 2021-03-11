@@ -7,4 +7,4 @@
 $CPUTIME = Get-Process | Format-Table -View priority
 
 
-Echo $CPUTIME
+Write-Output $CPUTIME
