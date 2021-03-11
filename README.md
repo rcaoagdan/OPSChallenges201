@@ -17,3 +17,5 @@ challenge7 : Bash Script utlilizing lshw - grep
 challenge8 : Batch Script - robocopy 
 
 challenge9 : PowerShell Script that prints out system logs
+
+challenge10: Powershell Script that prints System Processes
