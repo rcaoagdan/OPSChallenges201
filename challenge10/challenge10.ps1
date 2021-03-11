@@ -4,14 +4,13 @@
 #Purpose : System Process Powershell commands 
 
 #Variables
-$CPUTIME = Get-Process | Sort-Object -Property CPU -Descending| Format-Table -Property * -AutoSize #Variable for Highest CPU TIME
-$CPUID = Get-Process | Sort-Object -Property Id -Descending | Format-Table -Property * -AutoSize #Variable with Highest ID first
-$top5 = Get-Process | Sort-Object -Property WorkingSet -Descending |Select -First 5| Format-Table -Property * -AutoSize # variable for highest working set 
+#$CPUTIME = Get-Process | Sort-Object -Property CPU -Descending| Format-Table -Property * -AutoSize #Variable for Highest CPU TIME
+#$CPUID = Get-Process | Sort-Object -Property Id -Descending | Format-Table -Property * -AutoSize #Variable with Highest ID first
+#$top5 = Get-Process | Sort-Object -Property WorkingSet -Descending |Select -First 5| Format-Table -Property * -AutoSize # variable for highest working set 
 $url = "https://owasp.org/www-project-top-ten/" #variable set to url link
 $range = 1..13 # variable used range so that result is 10
 
-#functions 
-function inputselection {
+
     Write-Output "Hello, Please look below"
     Write-Output "1. List Active Process with Highest CPU Time "
     Write-Output "2. List Active Process with Highest ID"
@@ -19,29 +18,43 @@ function inputselection {
     Write-Output "4. Open OWSAP Top Ten "
     Write-Output "5. Exit"
     $inputentry = Read-Host What would you like to do?...
-}
 
+    
+
+#Functions
 function timecpu {
-    Write-Output $CPUTIME
+    #Write-Output $CPUTIME
+    Get-Process | Sort-Object -Property CPU -Descending| Format-Table -Property * -AutoSize #Variable for Highest CPU TIME
+  
 }
 
 function idcpu {
-    Write-Output $CPUID
+    #Write-Output $CPUID
+    Get-Process | Sort-Object -Property Id -Descending | Format-Table -Property * -AutoSize #Variable with Highest ID first
+   
 }
 
 function 5top {
-    Write-Output $top5
+    #Write-Output $top5
+    Get-Process | Sort-Object -Property WorkingSet -Descending |Select -First 5| Format-Table -Property * -AutoSize # variable for highest working set 
+   
 }
 
 function opensweb {
-    Start-Process iexplore.exe $url
+    foreach($i in $range){
+        Start-Process iexplore.exe $url
+     }
+     $inputweb = Read-Host "Would you Like to close all windows y/n?"
+     if($inputweb -eq "y"){
+        taskkill /IM iexplore.exe /F 
+     }
+     elseif ($inputweb -eq "n") {
+         Write-Output "Suit yourself"
+     }
+   
 }
 
 #main
-#foreach($url in $range){
- #   Start-Process iexplore.exe
-#}
-inputselection
 
 if($inputentry -eq 1){
     timecpu
@@ -53,7 +66,6 @@ if($inputentry -eq 1){
     opensweb
 }elseif($inputentry -eq 5){
     Remove-PSSession
-}else{
-    echo "No Correct Selection Made,  "
 }
+
 #end
