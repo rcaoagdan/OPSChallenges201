@@ -1,6 +1,6 @@
 #Script Name : Challenge 10
 #Autor: Raymond Caoagdan
-#Date of last revision : 03/10/2021
+#Date of last revision : 03/11/2021
 #Purpose : System Process Powershell commands 
 
 #Variables
@@ -59,18 +59,17 @@ function mainone {
     $inputentry = Read-Host What would you like to do?...
 	if($inputentry -eq 1){
     timecpu
-}elseif($inputentry -eq 2){
+    }elseif($inputentry -eq 2){
     idcpu
-}elseif($inputentry -eq 3){
+    }elseif($inputentry -eq 3){
     5top
-}elseif($inputentry -eq 4){
+    }elseif($inputentry -eq 4){
     opensweb
-}elseif($inputentry -eq 5){
+    }elseif($inputentry -eq 5){
     killprocess
+    }	
 }
-	
-}
+
 #main
 mainone
 #end
-
