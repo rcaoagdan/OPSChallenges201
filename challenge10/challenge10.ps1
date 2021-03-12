@@ -49,6 +49,7 @@ function killprocess {
     Stop-Process -Id $killcommand -Confirm -PassThru #stop process by confirming you want to
 	mainone
 }
+
 function mainone {
     Write-Output "Hello, Please look below"
     Write-Output "1. List Active Process with Highest CPU Time "
@@ -57,6 +58,7 @@ function mainone {
     Write-Output "4. Open OWSAP Top Ten "
     Write-Output "5. Kill a process"
     $inputentry = Read-Host What would you like to do?...
+
 	if($inputentry -eq 1){
     timecpu
     }elseif($inputentry -eq 2){
