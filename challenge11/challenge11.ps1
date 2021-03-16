@@ -140,7 +140,7 @@ function disSMBvv1 {
     Write-Output $smbv1set
     $disableinsecure = Read-Host Shall we disable SMBv1 y/n?
     if ($disableinsecure -eq "y") {
-        Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force
+        Disable-WindowsOptionalFeature -Online -FeatureName smb1protocol
         mainfunction
     }
     elseif ($disableinsecure -eq "y") {
