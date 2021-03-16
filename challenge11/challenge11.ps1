@@ -65,7 +65,7 @@ function fileandprint {
         mainfunction
     }
     else {
-        Write-Output "PLease enter correct entry"
+        Write-Output "Please make a correct selection"
         fileandprint
     }
 }
@@ -80,7 +80,7 @@ function allowicmptraffic {
     mainfunction
     }
     else {
-    Write-Output "PLease enter correct entry"
+    Write-Output "Please make a correct selection"
     allowicmptraffic
     }
 }
@@ -101,30 +101,69 @@ function remotemanage {
     }
 }
 function bloatwarermv {
-    Write-Output "Hello Please look at the current bloatware"
-    Write-Output $viewbloat
-    $bloatremove =Read-Host Enter what you want to remove:
-    DISM /Online /Remove-ProvisionedAppxPackage /PackageName:$bloatware
+    $askbloat = Read-Host Shall We remove some bloatware y/n? 
+    if ($askbloat -eq "y") {
+         Write-Output $viewbloat
+         $bloatremove =Read-Host Enter what you want to remove:
+         DISM /Online /Remove-ProvisionedAppxPackage /PackageName:$bloatware
+    }
+    elseif ($askbloat -eq "n") {
+        Write-Output "Nothing is to be removed"
+        mainfunction
+    }
+    else {
+        Write-Output "Please make a correct selection"
+    }
 
 }
 
-# Set-NetFirewallRule -DisplayGroup "File and Printer Sharing" -Enabled True #Turn on File and Printer Sharing
- #Get-NetFirewallRule -DisplayGroup 'File and Printer Sharing' #view status of file and printer sharing
+function hypev {
+   $hyperVM = Read-Host Shall we enable Hyper-V y/n?
+   if ($hyperVM -eq "y") {
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+    mainfunction
+   }
+   elseif ($hyperVM -eq "no") {
+       Write-Output "Hyper V left alone "
+       mainfunction
+   }
+   else {
+       Write-Output "Please make a correct selection"
+       hypev
+   }
+    
+}
+function disSMBvv1 {
+    $disableinsecure = Read-Host Shall we disable SMBv1 y/n?
+    if ($disableinsecure -eq "y") {
+        Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force
+    }
+    elseif ($disableinsecure -eq "y") {
+        confirmdiss  
+        }
+    else {
+        Write-Output "Please make a correct selection"
+    }
 
- # netsh advfirewall firewall add rule name="Allow incoming ping requests IPv4" dir=in action=allow protocol=icmpv4 #Allow ICMP traffic
+    }  
 
- # reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f #remtoe management
- # Get-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server' #view remote management
+function confirmdiss {
+    Write-Output "SMBv1 is insecure"
+    $confirm = Read-Host Are you sure you leave it alone y/n?
+    if ($confirm -eq "y") {
+        Write-Output "SMBv1 Left alone"
+        mainfunction
+    }
+    elseif ($confirm -eq "n") {
+        Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force
+    }
+    else {
+        Write-Output "Please make a correct selection"
+        confirmdiss
+    }
+        
+}
 
-
- # iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/debloat')) #remove bloateware
- # Get-AppxPackage -name " " | Remove-AppxPackage #removebloatware
-# DISM /Online /Get-ProvisionedAppxPackages | select-string Packagename #view bloatware run as adminstrator
-# DISM /Online /Remove-ProvisionedAppxPackage /PackageName:PACKAGENAME #remove bloatware
-
- # Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All #enable hyper v
- # DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V #DISM hyper v 
-# Get-Command -Module hyper-v | Out-GridView # list hyperv commands
-
- # Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force #smb1 disabled
+#main
 mainfunction
+#end
