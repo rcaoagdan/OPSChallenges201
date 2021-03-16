@@ -5,14 +5,14 @@
 # Automate system configurations on Windows 10
 
 #variables
-$start = true
+
 $printrule = Get-NetFirewallRule -DisplayGroup 'File and Printer Sharing'
 $viewremoterules = Get-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server'
 $viewbloat = DISM /Online /Get-ProvisionedAppxPackages | select-string Packagename
 
 #fuctions
 function mainfunction {
-    Write-Output "Hello, welcome to self automation, what would you like to do?"
+    $maininput = Read-Host Welcome to Self automation help, What would you like to do? 
     Write-Output "1. Enable File and Printer Sharing"
     Write-Output "2. Allow ICMP traffic"
     Write-Output "3. Enable Remote management"
@@ -20,7 +20,7 @@ function mainfunction {
     Write-Output "5. Enable hyper-v"
     Write-Output "6. Disable SMBv1"
     Write-Output "7.Exit"
-
+    
 }
 function fileandprint {
     Write-Output "Here are the current File and Printer Sharing settings"
@@ -58,5 +58,4 @@ function fileandprint {
 # Get-Command -Module hyper-v | Out-GridView # list hyperv commands
 
  # Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force #smb1 disabled
-#mainfunction
-fileandprint
+mainfunction
