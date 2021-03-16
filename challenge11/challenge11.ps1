@@ -13,6 +13,7 @@ $smbv1set = Get-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
 
 #fuctions
 function mainfunction {
+    Set-ExecutionPolicy -ExecutionPolicy Unrestricted
     Write-Output "Hello, welcome to self automation"
     Write-Output "1. Enable File and Printer Sharing"
     Write-Output "2. Allow ICMP traffic"
