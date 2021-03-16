@@ -114,7 +114,7 @@ function bloatwarermv {
         mainfunction
     }
     else {
-        Write-Output "Please make a correct selection"
+        Write-Output "Please make a correct selecion"
     }
 
 }
@@ -174,3 +174,5 @@ function confirmdiss {
 #main
 mainfunction
 #end
+
+#google docs https://docs.google.com/document/d/133BV_arIONw-FU8AT1vlN5T3mLW2YR1qF0owlwKCrs8/edit?usp=sharing
