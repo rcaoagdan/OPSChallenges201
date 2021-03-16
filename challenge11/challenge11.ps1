@@ -12,7 +12,7 @@ $viewbloat = DISM /Online /Get-ProvisionedAppxPackages | select-string Packagena
 
 #fuctions
 function mainfunction {
-    $maininput = Read-Host Welcome to Self automation help, What would you like to do? 
+    Write-Output "Hello, welcome to self automation"
     Write-Output "1. Enable File and Printer Sharing"
     Write-Output "2. Allow ICMP traffic"
     Write-Output "3. Enable Remote management"
@@ -20,7 +20,7 @@ function mainfunction {
     Write-Output "5. Enable hyper-v"
     Write-Output "6. Disable SMBv1"
     Write-Output "7.Exit"
-    
+    $maininput = Read-Host What would you like to do? 
 }
 function fileandprint {
     Write-Output "Here are the current File and Printer Sharing settings"
