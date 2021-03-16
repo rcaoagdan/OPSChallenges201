@@ -78,7 +78,7 @@ function allowicmptraffic {
     mainfunction
     }
     elseif ($traffic -eq "n") {
-    Write-Output "File and Printer Sharing shall be left alone"
+    Write-Output "ICMP Traffice left Alone"
     mainfunction
     }
     else {
