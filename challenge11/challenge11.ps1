@@ -107,7 +107,7 @@ function bloatwarermv {
     if ($askbloat -eq "y") {
          Write-Output $viewbloat
          $bloatremove =Read-Host Enter what you want to remove:
-         DISM /Online /Remove-ProvisionedAppxPackage /PackageName:$bloatware
+         DISM /Online /Remove-ProvisionedAppxPackage /PackageName:$bloatremove
     }
     elseif ($askbloat -eq "n") {
         Write-Output "Nothing is to be removed"
@@ -160,7 +160,8 @@ function confirmdiss {
         mainfunction
     }
     elseif ($confirm -eq "n") {
-        Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force
+        #Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force
+        Disable-WindowsOptionalFeature -Online -FeatureName smb1protocol
         mainfunction
     }
     else {
