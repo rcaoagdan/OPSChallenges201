@@ -21,13 +21,44 @@ function mainfunction {
     Write-Output "6. Disable SMBv1"
     Write-Output "7.Exit"
     $maininput = Read-Host What would you like to do? 
-}
+   
+        if($maininput -eq 1){
+            fileandprint
+        }
+        elseif ($maininput -eq 2) {
+            allowicmptraffic
+        }
+        elseif ($maininput -eq 3) {
+            remotemanage
+        }
+        elseif ($maininput -eq 4) {
+            bloatwarermv
+        }
+        elseif ($maininput -eq 5) {
+            hypev
+        }
+        elseif ($maininput -eq 6) {
+            disSMBvv1
+        }
+        elseif ($maininput -eq 7) {
+            exit
+        }
+        else {
+           Write-Output "Incorrect Selection"
+           mainfunction
+        }
+            
+        
+    }
+    
+
 function fileandprint {
     Write-Output "Here are the current File and Printer Sharing settings"
     Write-Output $printrule
     $fileprintinput = Read-Host Shall we enable y/n?
     if ($fileprintinput -eq "y") {
         Set-NetFirewallRule -DisplayGroup "File and Printer Sharing" -Enabled True
+        mainfunction
     }
     elseif ($fileprintinput -eq "n") {
         Write-Output "File and Printer Sharing shall be left alone"
@@ -37,6 +68,44 @@ function fileandprint {
         Write-Output "PLease enter correct entry"
         fileandprint
     }
+}
+function allowicmptraffic {
+   $traffic = Read-Host Shall we enable ICMP traffic y/n?
+   if ($traffic -eq "y") {
+    netsh advfirewall firewall add rule name="Allow incoming ping requests IPv4" dir=in action=allow protocol=icmpv4
+    mainfunction
+    }
+    elseif ($traffic -eq "n") {
+    Write-Output "File and Printer Sharing shall be left alone"
+    mainfunction
+    }
+    else {
+    Write-Output "PLease enter correct entry"
+    allowicmptraffic
+    }
+}
+
+function remotemanage {
+    $remote = Read-Host Shall we enable remote management y/n?
+    if ($remote -eq "y") {
+        reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+        mainfunction
+    }
+    elseif ($remote -eq "n") {
+        Write-Output "Remote Management Left Alone"
+        mainfunction
+    }
+    else {
+        Write-Output "Please make a correct selection"
+        remotemanage
+    }
+}
+function bloatwarermv {
+    Write-Output "Hello Please look at the current bloatware"
+    Write-Output $viewbloat
+    $bloatremove =Read-Host Enter what you want to remove:
+    DISM /Online /Remove-ProvisionedAppxPackage /PackageName:$bloatware
+
 }
 
 # Set-NetFirewallRule -DisplayGroup "File and Printer Sharing" -Enabled True #Turn on File and Printer Sharing
