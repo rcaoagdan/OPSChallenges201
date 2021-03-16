@@ -9,6 +9,7 @@
 $printrule = Get-NetFirewallRule -DisplayGroup 'File and Printer Sharing'
 $viewremoterules = Get-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server'
 $viewbloat = DISM /Online /Get-ProvisionedAppxPackages | select-string Packagename
+$smbv1set = Get-WindowsOptionalFeature -Online -FeatureName SMB1Protocol 
 
 #fuctions
 function mainfunction {
@@ -134,9 +135,12 @@ function hypev {
     
 }
 function disSMBvv1 {
+    Write-Output "Here is the current settings"
+    Write-Output $smbv1set
     $disableinsecure = Read-Host Shall we disable SMBv1 y/n?
     if ($disableinsecure -eq "y") {
         Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force
+        mainfunction
     }
     elseif ($disableinsecure -eq "y") {
         confirmdiss  
@@ -156,6 +160,7 @@ function confirmdiss {
     }
     elseif ($confirm -eq "n") {
         Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force
+        mainfunction
     }
     else {
         Write-Output "Please make a correct selection"
