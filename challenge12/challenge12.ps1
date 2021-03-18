@@ -7,6 +7,7 @@
 #variables
 $break = Write-Output " " #line break var
 $incorrect = Write-Output "Incorrect Input" #incorrect var
+
 #functions
 function mainone {
     Write-Output "Main Menu"
@@ -91,7 +92,7 @@ function ipconfigurations {
         $break
         ipconfigurations
     }
-} #this function has all ipconfig use pipping to store information to be called upon
+} #ipconfig uses pipping ' | 'to store information to be called upon
 
 function testinternet {
     Write-Output "Shall we test internet connection?"
@@ -136,7 +137,7 @@ function pingfunc {
        $break
    }
     
-}
+} 
 #main
 mainone
 #end
@@ -145,12 +146,6 @@ mainone
 # ipconfig https://www.meridianoutpost.com/resources/articles/command-line/ipconfig.php
 # net packets https://devblogs.microsoft.com/scripting/gathering-network-statistics-with-powershell/
 
-#main challennge
-#New-Item -Path . -Name "network_report.txt" -ItemType "file" 
-#ipconfig /all > network_report
-#Select-String -path "network_report" -pattern 'IPv4' -CaseSensitive -SimpleMatch
-#remove-item ntwork_report.txt
-
-# sources
+# sources used
 # ipconfig https://www.meridianoutpost.com/resources/articles/command-line/ipconfig.php
 # net packets https://devblogs.microsoft.com/scripting/gathering-network-statistics-with-powershell/
