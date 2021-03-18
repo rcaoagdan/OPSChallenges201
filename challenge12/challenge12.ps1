@@ -146,6 +146,6 @@ mainone
 # ipconfig https://www.meridianoutpost.com/resources/articles/command-line/ipconfig.php
 # net packets https://devblogs.microsoft.com/scripting/gathering-network-statistics-with-powershell/
 
-# sources used
+# sources useds
 # ipconfig https://www.meridianoutpost.com/resources/articles/command-line/ipconfig.php
 # net packets https://devblogs.microsoft.com/scripting/gathering-network-statistics-with-powershell/
