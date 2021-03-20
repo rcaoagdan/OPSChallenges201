@@ -135,6 +135,13 @@ function pingfunc {
 mainone
 #end
 
+
+#original code
+
+#ipconfig /all > network_report.txt
+#Select-String -path "network_report" -pattern 'Ipv4'
+
+
 # sources
 # ipconfig https://www.meridianoutpost.com/resources/articles/command-line/ipconfig.php
 # net packets https://devblogs.microsoft.com/scripting/gathering-network-statistics-with-powershell/
