@@ -9,5 +9,13 @@
 echo -e "\nPlease enter a domain name?"
 read -r ipvar 
 
-echo $ipvar 
-echo "Hello World"
+#Main Function utilizeing whois, dig, nslookup
+
+main_function (){
+    whois $ipvar
+    dig $ipvar
+    host $ipvar
+    nslookup $ipvar
+}
+
+main_function 
