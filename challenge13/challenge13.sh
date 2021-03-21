@@ -18,4 +18,6 @@ main_function (){
     nslookup $ipvar
 }
 
-main_function 
+#main
+main_function >> challenge13.txt
+#end 
