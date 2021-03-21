@@ -10,3 +10,4 @@ echo -e "\nPlease enter a domain name?"
 read -r ipvar 
 
 echo $ipvar 
+echo "Hello World"
