@@ -1,6 +1,6 @@
 # OPSChallenges
 
-Below are challenges I have completed during Ops 201. These challenges all dealt with scripting, either a bash or batch. As we all know when we first learn any type of computer language the first thing you learn is to print "Hello, World" which was challenge 1, hence you don't see a challenge 1 here. Other than that, feel free to browse around. 
+Below are challenges I have completed during Ops 201. These challenges all dealt with scripting, either a shell, batch, or bash. As we all know when we first learn any type of computer language the first thing you learn is to print "Hello, World" which was challenge 1, hence you don't see a challenge 1 here. Other than that, feel free to browse around. 
 
 Challege 2 : Bash Script that prints network adapter information
 
