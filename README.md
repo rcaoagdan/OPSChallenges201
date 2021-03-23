@@ -1,21 +1,27 @@
 # OPSChallenges
 
-Here lies my OPS Challenges for 201. 
+Below are challenges I have completed during Ops 201. These challenges all dealt with scripting, either a bash or batch. As we all know when we first learn any type of computer language the first thing you learn is to print "Hello, World" which was challenge 1, hence you don't see a challenge 1 here. Other than that, feel free to browse around. 
 
-challege2 : Bash Script that prints network adapter information
+Challege 2 : Bash Script that prints network adapter information
 
-challenge3 : Bash Script that prints login history
+Challenge 3 : Bash Script that prints login history
 
-challenge4 : Bash Schript Working with Arrays - Create & Reference
+Challenge 4 : Bash Script Working with Arrays - Create & Reference
 
-challenge5 : Bash Script Loops - Display PID
+Challenge 5 : Bash Script Loops - Display PID
 
-challenge6 : Bash Script showinng listening ports - Utilies if elif
+Challenge 6 : Bash Script showinng listening ports - Utilies if elif
 
-challenge7 : Bash Script utlilizing lshw - grep 
+Challenge 7 : Bash Script utlilizing lshw - grep 
 
-challenge8 : Batch Script - robocopy 
+Challenge 8 : Batch Script - robocopy 
 
-challenge9 : PowerShell Script that prints out system logs
+Challenge 9 : Batch Script that prints out system logs
 
-challenge10: Powershell Script that prints System Processes
+Challenge 10: Batch Script that prints System Processes
+
+Challenge 11: Batch Script that automates system configurations
+
+Challenge 12: Batch Script IP anyalysis 
+
+Challenge 13: Bash Script using whois , dig , host , nslookup
