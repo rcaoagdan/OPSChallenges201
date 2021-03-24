@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 
 #Script: Ops Challenge 13
 #Author: Ray Caoagdan
@@ -42,6 +42,6 @@ if [[ $(curl $ipvar) ]] 2>/dev/null; #sees url valid
   main_function >> challenge13.txt
  else
   echo "This page does not exist."
-fi
-    
-#end 
+fi 
+#end
+
