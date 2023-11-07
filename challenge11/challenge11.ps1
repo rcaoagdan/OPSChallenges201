@@ -105,9 +105,7 @@ function remotemanage {
 function bloatwarermv {
     $askbloat = Read-Host Shall We remove some bloatware y/n? 
     if ($askbloat -eq "y") {
-         Write-Output $viewbloat
-         $bloatremove =Read-Host Enter what you want to remove:
-         DISM /Online /Remove-ProvisionedAppxPackage /PackageName:$bloatremove
+        iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/debloat'))
     }
     elseif ($askbloat -eq "n") {
         Write-Output "Nothing is to be removed"
